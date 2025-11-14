@@ -4,8 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thiệp cưới Quốc Phong ❤️ Diễm Quỳnh</title>
-
-  <!-- GOOGLE FONTS -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
@@ -83,7 +81,7 @@
 
     .slides {
       display: flex;
-      width: calc(100% * 6); /* 6 ảnh */
+      width: calc(100% * 6);
       animation: slide 18s infinite;
     }
 
@@ -124,12 +122,6 @@
       height: 180px;
     }
 
-    /* Hoa rơi */
-    @keyframes fall {
-      0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
-      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
-    }
-
     .flower {
       position: fixed;
       top: -50px;
@@ -138,22 +130,48 @@
       pointer-events: none;
       z-index: 999;
     }
+
+    @keyframes fall {
+      0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+
+    .sparkle {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px);
+      background-size: 20px 20px;
+      animation: sparkleMove 10s linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes sparkleMove {
+      from { background-position: 0 0; }
+      to { background-position: 100% 100%; }
+    }
   </style>
 </head>
 
 <body>
+  <div class="sparkle"></div>
 
-  <!-- LOGO -->
   <div class="logo">P & Q</div>
   <div style="margin-top:8px; letter-spacing:3px; color:#aa3355; font-weight:600;">
     WEDDING INVITATION
   </div>
 
-  <!-- COUPLE NAMES -->
   <h1>Quốc Phong <span style="color:#d6336c">♥</span> Diễm Quỳnh</h1>
 
-  <!-- DATE & PLACE -->
-  <div style="font-size:20px; margin-top:10px;">
+  <div style="margin-top:30px; font-size:18px; max-width:600px; margin-left:auto; margin-right:auto; line-height:1.6;">
+    Chúng mình – <strong>Quốc Phong</strong> và <strong>Diễm Quỳnh</strong> – trân trọng kính mời bạn đến chung vui cùng chúng mình trong ngày trọng đại. 
+    Sự hiện diện của bạn là niềm hạnh phúc lớn lao và là món quà quý giá nhất mà chúng mình có thể nhận được 💖
+  </div>
+
+  <div style="font-size:20px; margin-top:20px;">
     Lễ thành hôn • 20:00 - 20/12/2025<br>
     Nhà văn hoá thôn Phú Nhiêu
   </div>
@@ -162,12 +180,10 @@
      href="https://www.google.com/maps/search/?api=1&query=Nhà+văn+hoá+thôn+Phú+Nhiêu"
      target="_blank">Xem Google Map</a>
 
-  <!-- MUSIC -->
-  <audio id="music" loop>
+  <audio id="music" autoplay loop>
     <source src="assets/music/Bài Này Không Để Đi Diễn.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- SLIDER -->
   <div class="slider">
     <div class="slides">
       <img src="assets/img/img1.jpg">
@@ -179,20 +195,28 @@
     </div>
   </div>
 
-  <!-- COUNTDOWN -->
   <div class="countdown-box">
     Đếm ngược đến ngày trọng đại
     <div id="countdown">Đang tải...</div>
   </div>
 
-  <!-- QR CODE -->
   <div class="qr-section">
     <h3>Quét mã để xem thiệp cưới</h3>
     <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://congminhh410.github.io/quocphong-diemquynh/">
   </div>
 
+  <div class="qr-section">
+    <h3>Ủng hộ tình yêu của chúng mình 💝</h3>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=STK+123456789+Nguyen+Quoc+Phong+Vietcombank">
+    <div style="margin-top:10px; font-size:14px; color:#666;">STK: 123456789 – Nguyễn Quốc Phong – Vietcombank</div>
+  </div>
+
+  <div style="margin-top:60px; font-size:16px; color:#555;">
+    Xin chân thành cảm ơn bạn đã dành thời gian ghé thăm thiệp cưới của chúng mình. 
+    Hẹn gặp bạn trong ngày vui sắp tới! 💐
+  </div>
+
   <script>
-    // Tự động phát nhạc khi trang tải
     window.addEventListener('DOMContentLoaded', function() {
       const music = document.getElementById('music');
       const playPromise = music.play();
@@ -203,38 +227,5 @@
       }
     });
 
-    // Countdown
     var weddingDate = new Date("Dec 20, 2025 20:00:00").getTime();
-    setInterval(function() {
-      let now = new Date().getTime();
-      let distance = weddingDate - now;
-
-      if (distance < 0) {
-        document.getElementById("countdown").innerHTML = "💖 Lễ cưới đã bắt đầu!";
-        return;
-      }
-
-      let days = Math.floor(distance / (1000*60*60*24));
-      let hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
-      let minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
-      let seconds = Math.floor((distance % (1000*60)) / 1000);
-
-      document.getElementById("countdown").innerHTML =
-        days + " ngày " + hours + " giờ " + minutes + " phút " + seconds + " giây";
-    }, 1000);
-
-    // Hoa rơi
-    function createFlower() {
-      const flower = document.createElement('div');
-      flower.classList.add('flower');
-      flower.style.left = Math.random() * window.innerWidth + 'px';
-      flower.style.animationDuration = (3 + Math.random() * 5) + 's';
-      flower.innerText = '🌸';
-      document.body.appendChild(flower);
-      setTimeout(() => flower.remove(), 8000);
-    }
-    setInterval(createFlower, 500);
-  </script>
-
-</body>
-</html>
+    setInterval(function()
