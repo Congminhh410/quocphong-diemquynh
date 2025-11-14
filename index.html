@@ -1,187 +1,221 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thiệp cưới Quốc Phong ❤️ Diễm Quỳnh</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thiệp cưới Quốc Phong ❤️ Diễm Quỳnh</title>
 
-<!-- GOOGLE FONTS -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
-<style>
+  <style>
     body {
-        margin: 0;
-        font-family: 'Montserrat', sans-serif;
-        background: #f8f8f8;
-        color: #333;
-        text-align: center;
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: #f8f8f8;
+      color: #333;
+      text-align: center;
+      overflow-x: hidden;
     }
 
-    /* Vòng nguyệt quế logo */
     .logo {
-        margin-top: 40px;
-        font-size: 48px;
-        font-family: 'Playfair Display';
-        font-weight: 700;
-        position: relative;
-        display: inline-block;
+      margin-top: 40px;
+      font-size: 48px;
+      font-family: 'Playfair Display';
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
     }
 
     .logo:before,
     .logo:after {
-        content: "🌿";
-        font-size: 38px;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
+      content: "🌿";
+      font-size: 38px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
     }
 
     .logo:before { left: -45px; transform: rotate(-20deg); }
     .logo:after { right: -45px; transform: rotate(20deg); }
 
-    .song-controls {
-        margin-top: 10px;
-        font-size: 14px;
-        color: #777;
+    h1 {
+      margin-top: 30px;
+      font-family: 'Playfair Display';
+      font-size: 34px;
+      animation: fadeZoom 2s ease-out;
     }
 
-    /* SLIDER */
-    .slider {
-        margin-top: 30px;
-        width: 90%;
-        max-width: 700px;
-        margin-left: auto;
-        margin-right: auto;
-        overflow: hidden;
-        border-radius: 12px;
-        box-shadow: 0 5px 20px rgba(0,0,0,.1);
-    }
-    .slides {
-        display: flex;
-        width: 300%;
-        animation: slide 12s infinite;
-    }
-    .slides img {
-        width: 100%;
-    }
-
-    @keyframes slide {
-        0%   { margin-left: 0; }
-        33%  { margin-left: -100%; }
-        66%  { margin-left: -200%; }
-        100% { margin-left: 0; }
-    }
-
-    /* COUNTDOWN */
-    .countdown-box {
-        margin-top: 40px;
-        font-size: 22px;
-        font-weight: 600;
-    }
-    #countdown {
-        margin-top: 20px;
-        font-size: 26px;
-        font-weight: bold;
-        color: #d6336c;
-    }
-
-    /* QR CODE */
-    .qr-section {
-        margin-top: 40px;
-    }
-    .qr-section img {
-        width: 180px;
-        height: 180px;
+    @keyframes fadeZoom {
+      0% { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
     }
 
     .button {
-        display: inline-block;
-        margin-top: 20px;
-        padding: 12px 24px;
-        background: #d6336c;
-        color: white;
-        border-radius: 8px;
-        text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #d6336c;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: transform 0.3s;
     }
-</style>
+
+    .button:hover {
+      animation: pulse 0.6s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .slider {
+      margin: 30px auto;
+      width: 90%;
+      max-width: 700px;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.1);
+    }
+
+    .slides {
+      display: flex;
+      width: 300%;
+      animation: slide 12s infinite;
+    }
+
+    .slides img {
+      width: 100%;
+    }
+
+    @keyframes slide {
+      0%   { margin-left: 0; }
+      33%  { margin-left: -100%; }
+      66%  { margin-left: -200%; }
+      100% { margin-left: 0; }
+    }
+
+    .countdown-box {
+      margin-top: 40px;
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    #countdown {
+      margin-top: 20px;
+      font-size: 26px;
+      font-weight: bold;
+      color: #d6336c;
+    }
+
+    .qr-section {
+      margin-top: 40px;
+    }
+
+    .qr-section img {
+      width: 180px;
+      height: 180px;
+    }
+
+    .song-controls {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #777;
+    }
+
+    /* Hoa rơi */
+    @keyframes fall {
+      0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+
+    .flower {
+      position: fixed;
+      top: -50px;
+      font-size: 24px;
+      animation: fall linear infinite;
+      pointer-events: none;
+      z-index: 999;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- LOGO -->
-<div class="logo">P & Q</div>
-<div style="margin-top:8px; letter-spacing:3px; color:#aa3355; font-weight:600;">
+  <!-- LOGO -->
+  <div class="logo">P & Q</div>
+  <div style="margin-top:8px; letter-spacing:3px; color:#aa3355; font-weight:600;">
     WEDDING INVITATION
-</div>
+  </div>
 
-<!-- COUPLE NAMES -->
-<h1 style="margin-top:30px; font-family:'Playfair Display'; font-size:34px;">
-    Quốc Phong <span style="color:#d6336c">♥</span> Diễm Quỳnh
-</h1>
+  <!-- COUPLE NAMES -->
+  <h1>Quốc Phong <span style="color:#d6336c">♥</span> Diễm Quỳnh</h1>
 
-<!-- DATE & PLACE -->
-<div style="font-size:20px; margin-top:10px;">
+  <!-- DATE & PLACE -->
+  <div style="font-size:20px; margin-top:10px;">
     Lễ thành hôn • 20:00 - 20/12/2025<br>
     Nhà văn hoá thôn Phú Nhiêu
-</div>
+  </div>
 
-<a class="button"
-   href="https://www.google.com/maps/search/?api=1&query=Nhà+văn+hoá+thôn+Phú+Nhiêu"
-   target="_blank">Xem Google Map</a>
+  <a class="button"
+     href="https://www.google.com/maps/search/?api=1&query=Nhà+văn+hoá+thôn+Phú+Nhiêu"
+     target="_blank">Xem Google Map</a>
 
-<!-- MUSIC -->
-<audio id="music" autoplay loop>
+  <!-- MUSIC -->
+  <audio id="music" loop>
     <source src="assets/music/Bài Này Không Để Đi Diễn.mp3" type="audio/mpeg">
-</audio>
+  </audio>
 
-<div class="song-controls">
+  <div class="song-controls">
     <button onclick="document.getElementById('music').play()">▶ Phát nhạc</button>
     <button onclick="document.getElementById('music').pause()">⏸ Tạm dừng</button>
-</div>
+  </div>
 
-<!-- SLIDER -->
-<div class="slider">
+  <!-- SLIDER -->
+  <div class="slider">
     <div class="slides">
-        <img src="assets/img/img1.jpg">
-        <img src="assets/img/img2.jpg">
-        <img src="assets/img/img3.jpg">
+      <img src="assets/img/img1.jpg">
+      <img src="assets/img/img2.jpg">
+      <img src="assets/img/img3.jpg">
     </div>
-</div>
+  </div>
 
-<!-- COUNTDOWN -->
-<div class="countdown-box">
+  <!-- COUNTDOWN -->
+  <div class="countdown-box">
     Đếm ngược đến ngày trọng đại
     <div id="countdown">Đang tải...</div>
-</div>
+  </div>
 
-<!-- QR CODE -->
-<div class="qr-section">
+  <!-- QR CODE -->
+  <div class="qr-section">
     <h3>Quét mã để xem thiệp cưới</h3>
     <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://congminhh410.github.io/quocphong-diemquynh/">
-</div>
+  </div>
 
-<script>
-    // Countdown timer
+  <script>
+    // Tự động phát nhạc khi trang tải
+    window.addEventListener('DOMContentLoaded', function() {
+      const music = document.getElementById('music');
+      const playPromise = music.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          console.log("Trình duyệt đang chặn tự động phát nhạc.");
+        });
+      }
+    });
+
+    // Countdown
     var weddingDate = new Date("Dec 20, 2025 20:00:00").getTime();
-
     setInterval(function() {
-        let now = new Date().getTime();
-        let distance = weddingDate - now;
+      let now = new Date().getTime();
+      let distance = weddingDate - now;
 
-        if (distance < 0) {
-            document.getElementById("countdown").innerHTML = "💖 Lễ cưới đã bắt đầu!";
-            return;
-        }
+      if (distance < 0) {
+        document.getElementById("countdown").innerHTML = "💖 Lễ cưới đã bắt đầu!";
+        return;
+      }
 
-        let days = Math.floor(distance / (1000*60*60*24));
-        let hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
-        let minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
-        let seconds = Math.floor((distance % (1000*60)) / 1000);
-
-        document.getElementById("countdown").innerHTML =
-            days + " ngày " + hours + " giờ " + minutes + " phút " + seconds + " giây";
-    }, 1000);
-</script>
-
-</body>
-</html>
+      let
