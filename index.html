@@ -83,19 +83,23 @@
 
     .slides {
       display: flex;
-      width: 300%;
-      animation: slide 12s infinite;
+      width: calc(100% * 6); /* 6 ảnh */
+      animation: slide 18s infinite;
     }
 
     .slides img {
       width: 100%;
+      flex-shrink: 0;
     }
 
     @keyframes slide {
-      0%   { margin-left: 0; }
-      33%  { margin-left: -100%; }
-      66%  { margin-left: -200%; }
-      100% { margin-left: 0; }
+      0%   { transform: translateX(0); }
+      16%  { transform: translateX(-100%); }
+      33%  { transform: translateX(-200%); }
+      50%  { transform: translateX(-300%); }
+      66%  { transform: translateX(-400%); }
+      83%  { transform: translateX(-500%); }
+      100% { transform: translateX(0); }
     }
 
     .countdown-box {
@@ -118,12 +122,6 @@
     .qr-section img {
       width: 180px;
       height: 180px;
-    }
-
-    .song-controls {
-      margin-top: 10px;
-      font-size: 14px;
-      color: #777;
     }
 
     /* Hoa rơi */
@@ -169,17 +167,15 @@
     <source src="assets/music/Bài Này Không Để Đi Diễn.mp3" type="audio/mpeg">
   </audio>
 
-  <div class="song-controls">
-    <button onclick="document.getElementById('music').play()">▶ Phát nhạc</button>
-    <button onclick="document.getElementById('music').pause()">⏸ Tạm dừng</button>
-  </div>
-
   <!-- SLIDER -->
   <div class="slider">
     <div class="slides">
       <img src="assets/img/img1.jpg">
       <img src="assets/img/img2.jpg">
       <img src="assets/img/img3.jpg">
+      <img src="assets/img/img4.jpg">
+      <img src="assets/img/img5.jpg">
+      <img src="assets/img/img6.jpg">
     </div>
   </div>
 
