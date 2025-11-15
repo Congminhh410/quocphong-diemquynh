@@ -16,6 +16,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const firebase_db = getFirestore(app);
 
+// Secret key admin
+const adminKey = "phongquynh123";
+
 (function ($) {
     if ($("#wish-form").length) {
         $("#wish-form").validate({
@@ -65,7 +68,7 @@ const firebase_db = getFirestore(app);
                 const email = $(form).find("input[name='email']").val() || null; // Optional
 
                 // Thêm dữ liệu vào Firestore
-                addDoc(collection(firebase_db, "huy_huong"), {
+                addDoc(collection(firebase_db, "phong_quynh"), {
                     name: name,
                     content: content,
                     email: email,
@@ -104,32 +107,70 @@ const firebase_db = getFirestore(app);
     }
 })(window.jQuery);
 
-document.addEventListener("DOMContentLoaded", function (){
-    async function displayWishes() {
-        const wishesContainer = document.querySelector('.wish-box');
-        wishesContainer.innerHTML = ''; // Xóa nội dung cũ
+// Hiển thị danh sách lời chúc
+async function displayWishes() {
+    const wishesContainer = document.querySelector('.wish-box');
+    wishesContainer.innerHTML = '';
+    const q = query(collection(firebase_db, "phong_quynh"), orderBy("timestamp", "desc"));
+    const querySnapshot = await getDocs(q);
+    let isBg = false;
 
-        const q = query(collection(firebase_db, "huy_huong"), orderBy("timestamp", "desc"));
-        const querySnapshot = await getDocs(q);
-        let isBg = false;
+    querySnapshot.forEach((docSnap) => {
+        const data = docSnap.data();
+        const wishBoxItemClass = isBg ? "wish-box-item" : "wish-box-item bg";
+        const wishItem = `
+            <div class="${wishBoxItemClass}" data-id="${docSnap.id}">
+                <strong>${data.name.replace(/&/g, "&amp;")}</strong>
+                <p>${data.content.replace(/&/g, "&amp;")}</p>
+                <button class="deleteWishBtn" style="display:none; background:red; color:white; border:none; padding:5px; cursor:pointer;">
+                    Xoá
+                </button>
+            </div>
+        `;
+        wishesContainer.insertAdjacentHTML('beforeend', wishItem);
+        isBg = !isBg;
+    });
+}
+document.addEventListener("DOMContentLoaded", displayWishes);
 
-        querySnapshot.forEach((doc) => {
-            const data = doc.data();
-            const wishBoxItemClass = isBg === true ? "wish-box-item" : "wish-box-item bg";
-
-            // Tạo phần tử hiển thị lời chúc
-            const wishItem = `
-                <div class="${wishBoxItemClass}">
-                    <strong>${data.name.replace(/&/g, "&amp;").replace(/>/g, "&gt;").replace(/</g, "&lt;").replace(/"/g, "&quot;")}</strong>
-                    <p>${data.content.replace(/&/g, "&amp;").replace(/>/g, "&gt;").replace(/</g, "&lt;").replace(/"/g, "&quot;")}</p>
-                </div>
-            `;
-
-            // Chèn phần tử vào container
-            wishesContainer.insertAdjacentHTML('beforeend', wishItem);
-            isBg = !isBg;
-        });
+// Hàm xoá tất cả lời chúc
+async function deleteAllWishes() {
+    if (!confirm("Bạn có chắc chắn muốn xoá toàn bộ lời chúc không?")) {
+        return; // nếu chọn Cancel thì dừng
     }
-
+    const querySnapshot = await getDocs(collection(firebase_db, "phong_quynh"));
+    for (const wishDoc of querySnapshot.docs) {
+        await deleteDoc(doc(firebase_db, "phong_quynh", wishDoc.id));
+    }
+    alert("Đã xoá toàn bộ lời chúc!");
     displayWishes();
+}
+document.getElementById("deleteWishesBtn").addEventListener("click", deleteAllWishes);
+
+// Hàm xoá lời chúc riêng lẻ
+async function deleteWish(wishId) {
+    if (!confirm("Bạn có chắc chắn muốn xoá lời chúc này không?")) {
+        return;
+    }
+    await deleteDoc(doc(firebase_db, "phong_quynh", wishId));
+    document.querySelector(`[data-id="${wishId}"]`).remove();
+    alert("Đã xoá lời chúc!");
+}
+
+// Kiểm tra key admin
+document.getElementById("checkKeyBtn").addEventListener("click", () => {
+    const inputKey = document.getElementById("adminKeyInput").value;
+    if (inputKey === adminKey) {
+        document.getElementById("deleteWishesBtn").style.display = "inline-block";
+        document.querySelectorAll(".deleteWishBtn").forEach(btn => {
+            btn.style.display = "inline-block";
+            btn.addEventListener("click", (e) => {
+                const wishId = e.target.closest("div").getAttribute("data-id");
+                deleteWish(wishId);
+            });
+        });
+        alert("Bạn đã mở quyền admin!");
+    } else {
+        alert("Sai key, không có quyền xoá!");
+    }
 });
