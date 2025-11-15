@@ -232,7 +232,7 @@ function removeVietnameseTones(str) {
 }
 
 /* Create player music */
-const srcMusic = "../music/Bài Này Không Để Đi Diễn.mp3";
+const srcMusic = "../music/music.mp3";
 const audioPlayer = document.createElement("AUDIO");
 
 audioPlayer.src = srcMusic;
