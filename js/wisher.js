@@ -3,13 +3,13 @@ import { getFirestore, collection, addDoc, serverTimestamp, getDocs, query, orde
 
 // Cấu hình Firebase
 const firebaseConfig = {
-    apiKey: "AIzaSyBG4mZqaKApo0cgIHbVWmXi2fstVLFNgWs",
-    authDomain: "fir-app-b7b20.firebaseapp.com",
-    projectId: "fir-app-b7b20",
-    storageBucket: "fir-app-b7b20.appspot.com",
-    messagingSenderId: "996043254288",
-    appId: "1:996043254288:web:4f7fd753220e558e4b7895",
-    measurementId: "G-3QE9GLET5K"
+    // apiKey: "AIzaSyBG4mZqaKApo0cgIHbVWmXi2fstVLFNgWs",
+    // authDomain: "fir-app-b7b20.firebaseapp.com",
+    // projectId: "fir-app-b7b20",
+    // storageBucket: "fir-app-b7b20.appspot.com",
+    // messagingSenderId: "996043254288",
+    // appId: "1:996043254288:web:4f7fd753220e558e4b7895",
+    // measurementId: "G-3QE9GLET5K"
 };
 
 // Khởi tạo Firebase
