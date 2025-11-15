@@ -235,13 +235,9 @@ function removeVietnameseTones(str) {
 const srcMusic = "../music/Bài Này Không Để Đi Diễn.mp3";
 const audioPlayer = document.createElement("AUDIO");
 
-audioPlayer.style.display = "none";
+audioPlayer.src = srcMusic;
 audioPlayer.volume = 0.3;
-audioPlayer.setAttribute("controls", "controls");
-audioPlayer.setAttribute("autoplay", "autoplay");
-audioPlayer.setAttribute("src", srcMusic);
-audioPlayer.pause();
-
+audioPlayer.loop = true; // phát lặp lại
 document.body.appendChild(audioPlayer);
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -253,6 +249,19 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => musicPlayer.classList.add("show-sec"), 2000);
         setTimeout(() => musicPlayer.classList.remove("show-sec"), 7000);
     }
+
+	// Tự động phát nhạc ngay khi trang load lần đầu
+    audioPlayer.play().then(() => {
+        toggleVolumeIcon(true);
+    }).catch(() => {
+        // Nếu trình duyệt chặn autoplay, sẽ phát khi user click lần đầu
+        document.body.addEventListener("click", () => {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                toggleVolumeIcon(true);
+            }
+        }, { once: true });
+    });
 });
 
 function playPause() {
@@ -280,19 +289,19 @@ function toggleVolumeIcon(isPlaying) {
     }
 }
 
-function handleClickAutoPlay(event) {
-    const elements = document.querySelectorAll(".music-player-secondary, .playerIcon");
-    const isClickInside = Array.from(elements).some((element) =>
-        element.contains(event.target)
-    );
+// function handleClickAutoPlay(event) {
+//     const elements = document.querySelectorAll(".music-player-secondary, .playerIcon");
+//     const isClickInside = Array.from(elements).some((element) =>
+//         element.contains(event.target)
+//     );
 
-    if (isClickInside && !audioPlayer.paused) {
-        playPause();
-    }
-    document.body.removeEventListener("click", handleClickAutoPlay, true);
-}
+//     if (isClickInside) {
+//         playPause();
+//     }
+//     document.body.removeEventListener("click", handleClickAutoPlay, true);
+// }
 
-document.body.addEventListener("click", handleClickAutoPlay, true);
+// document.body.addEventListener("click", handleClickAutoPlay, true);
 
 
 document.write(`
