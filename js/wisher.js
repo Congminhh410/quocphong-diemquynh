@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
-import { getFirestore, collection, addDoc, serverTimestamp, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+import { getFirestore, collection, addDoc, serverTimestamp, getDocs, query, orderBy, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
 // Cấu hình Firebase
 const firebaseConfig = {
@@ -119,13 +119,11 @@ async function displayWishes() {
         const data = docSnap.data();
         const wishBoxItemClass = isBg ? "wish-box-item" : "wish-box-item bg";
         const wishItem = `
-            <div class="${wishBoxItemClass}" data-id="${docSnap.id}">
-                <strong>${data.name.replace(/&/g, "&amp;")}</strong>
-                <p>${data.content.replace(/&/g, "&amp;")}</p>
-                <button class="deleteWishBtn" style="display:none; background:red; color:white; border:none; padding:5px; cursor:pointer;">
-                    Xoá
-                </button>
-            </div>
+          <div class="${wishBoxItemClass}" data-id="${doc.id}">
+            <strong>${data.name}</strong>
+            <p>${data.content}</p>
+            <button class="deleteWishBtn" style="display:none;">Xoá</button>
+          </div>
         `;
         wishesContainer.insertAdjacentHTML('beforeend', wishItem);
         isBg = !isBg;
