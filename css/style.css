@@ -5500,9 +5500,9 @@ z-index: 99999 !important;
 /*--------------------------------------------------------------
 #1.5  donate-section
 --------------------------------------------------------------*/
-
+/* Hộp mừng cưới - phong cách pastel */
 .donate-section {
-  background-color: #fff;
+  background-color: #fff0f5;
   padding: 100px 0;
   font-family: 'Dosis', sans-serif;
 }
@@ -5513,8 +5513,8 @@ z-index: 99999 !important;
 }
 
 .donate-header h2 {
-  font-size: 36px;
-  color: #b03a2e;
+  font-size: 40px;
+  color: #c0392b;
   font-family: 'Clicker Script', cursive;
   margin-bottom: 10px;
 }
@@ -5534,8 +5534,8 @@ z-index: 99999 !important;
 }
 
 .donate-card {
-  background: #fff;
-  border: 2px solid #b03a2e;
+  background: #e74c3c;
+  color: white;
   border-radius: 16px;
   padding: 30px;
   width: 320px;
@@ -5547,13 +5547,11 @@ z-index: 99999 !important;
 
 .donate-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
-  border-color: #d35400;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
 
 .donate-card h3 {
   font-size: 22px;
-  color: #b03a2e;
   margin-bottom: 20px;
   font-weight: bold;
 }
@@ -5564,13 +5562,11 @@ z-index: 99999 !important;
   object-fit: cover;
   border-radius: 12px;
   margin-bottom: 20px;
-  border: 3px solid #f5cba7;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  border: 3px solid #fff;
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
 }
 
 .donate-card p {
   font-size: 16px;
-  color: #333;
   margin: 6px 0;
 }
-
