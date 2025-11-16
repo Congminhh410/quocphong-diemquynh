@@ -5500,76 +5500,67 @@ z-index: 99999 !important;
 /*--------------------------------------------------------------
 #1.5  donate-section
 --------------------------------------------------------------*/
-/* Hộp mừng cưới - phong cách pastel */
-/* .donate-section {
-  background-color: #fff0f5;
-  padding: 100px 0;
+.wedding-gift-box {
+  background: url(../images/background_hoa.png) center/cover no-repeat;
+  padding: 60px 20px;
+  text-align: center;
+  color: #fff;
   font-family: 'Dosis', sans-serif;
 }
 
-.donate-header {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.donate-header h2 {
-  font-size: 40px;
-  color: #c0392b;
-  font-family: 'Clicker Script', cursive;
+.wedding-gift-box h2 {
+  font-size: 48px;
+  color: #d94c7c;
+  font-family: 'Playfair Display', serif;
   margin-bottom: 10px;
 }
 
-.donate-header p {
-  font-size: 17px;
-  color: #555;
+.wedding-gift-box .intro-text {
+  font-size: 18px;
+  color: #d94c7c;
+  margin-bottom: 40px;
   max-width: 600px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.donate-box {
+.gift-container {
   display: flex;
   justify-content: center;
+  gap: 30px;
   flex-wrap: wrap;
-  gap: 40px;
 }
 
-.donate-card {
-  background: #e74c3c;
-  color: white;
-  border-radius: 16px;
-  padding: 30px;
-  width: 320px;
-  text-align: center;
-  box-shadow: 0 0 0 rgba(0,0,0,0);
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.donate-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
-}
-
-.donate-card h3 {
-  font-size: 22px;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-
-.qr-code-image {
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
+.gift-card {
+  background-color: rgba(217, 76, 124, 0.15);
+  border: 2px solid #d94c7c;
   border-radius: 12px;
-  margin-bottom: 20px;
-  border: 3px solid #fff;
-  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.donate-card p {
+.gift-card h3 {
+  font-size: 20px;
+  color: #fff;
+  background-color: #d94c7c;
+  padding: 8px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.gift-card img {
+  width: 160px;
+  height: 160px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+.gift-card p {
   font-size: 16px;
-  margin: 6px 0;
-} */
+  color: #fff;
+  margin: 4px 0;
+}
 
 .slide-inner::before {
   content: "";
