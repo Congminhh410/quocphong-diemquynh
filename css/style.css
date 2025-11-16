@@ -5592,17 +5592,6 @@ z-index: 99999 !important;
   overflow: hidden;
 }
 
-.wedding-announcement {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  width: 100%;
-  text-align: center;
-  padding: 0 20px;
-}
-
 .couple-text h2 {
   font-family: 'Clicker Script', cursive;
   font-size: 60px;
