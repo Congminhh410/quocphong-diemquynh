@@ -5640,6 +5640,85 @@ z-index: 99999 !important;
   transform: scale(1.05);
 }
 
+.qr-popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.qr-card {
+  perspective: 1000px;
+}
+
+.qr-front {
+  background: linear-gradient(135deg, #fff0f5, #ffe4e1);
+  padding: 30px 20px;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 320px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transform: rotateY(90deg);
+  animation: flipOpen 0.6s forwards;
+  position: relative;
+}
+
+.qr-front h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: #d94c7c;
+  margin-bottom: 10px;
+}
+
+.qr-front img {
+  width: 200px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.qr-front p {
+  font-size: 16px;
+  color: #d94c7c;
+  margin-bottom: 10px;
+}
+
+.qr-front button {
+  background-color: #d94c7c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 24px;
+  color: #d94c7c;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+@keyframes flipOpen {
+  from {
+    transform: rotateY(90deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+
 
 
 
