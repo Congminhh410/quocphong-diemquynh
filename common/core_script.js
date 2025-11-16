@@ -114,7 +114,7 @@ var snowFall = function () {
     }
 }();
 
-var iconEffect = "/images/co_bon_la.png";
+var iconEffect = "/images/heart.png";
 var minSpeed = 1;
 var maxSpeed = 3;
 var minSize = 15;
