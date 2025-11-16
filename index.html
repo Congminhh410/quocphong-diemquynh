@@ -1009,6 +1009,39 @@
     <script type="module" src="./js/wisher.js"></script>
     <script src="./js/script.js"></script>
     <script type="module" src="./common/emoji-picker/js/init.js"></script>
+
+    <script>
+    function showQR(type) {
+      const popup = document.getElementById('qrPopup');
+      const qrTitle = document.getElementById('qrTitle');
+      const qrImage = document.getElementById('qrImage');
+      const qrInfo = document.getElementById('qrInfo');
+    
+      if (type === 'groom') {
+        qrTitle.textContent = 'Mừng cưới đến Chú Rể';
+        qrImage.src = 'qr-chure.png';
+        qrInfo.textContent = 'STK: 39799666';
+      } else {
+        qrTitle.textContent = 'Mừng cưới đến Cô Dâu';
+        qrImage.src = 'qr-codau.png';
+        qrInfo.textContent = 'STK: 1055465948';
+      }
+    
+      popup.style.display = 'flex';
+    }
+    
+    function closeQR() {
+      document.getElementById('qrPopup').style.display = 'none';
+    }
+    
+    function copySTK() {
+      const stk = document.getElementById('qrInfo').textContent.replace('STK: ', '');
+      navigator.clipboard.writeText(stk).then(() => {
+        alert('Đã sao chép STK: ' + stk);
+      });
+    }
+    </script>
+
 </body>
 
 </html>
