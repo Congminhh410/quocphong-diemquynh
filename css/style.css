@@ -5604,6 +5604,54 @@ z-index: 99999 !important;
   letter-spacing: 2px;
 }
 
+/* aaa*/
+.guest-selector {
+  text-align: center;
+  padding: 40px 20px;
+  font-family: 'Dosis', sans-serif;
+}
+
+.guest-options {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.guest-card {
+  width: 140px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.guest-card img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.guest-card p {
+  margin-top: 8px;
+  font-weight: bold;
+  color: #d94c7c;
+}
+
+.guest-card:hover {
+  transform: scale(1.05);
+}
+
+.qr-display {
+  margin-top: 30px;
+  display: none;
+}
+
+.qr-display img {
+  width: 180px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+
 
 @keyframes fadeInUp {
   from {
