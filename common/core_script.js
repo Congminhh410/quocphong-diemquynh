@@ -114,7 +114,7 @@ var snowFall = function () {
     }
 }();
 
-var iconEffect = "/images/heart.png";
+var iconEffect = "/images/heart1.png";
 var minSpeed = 1;
 var maxSpeed = 3;
 var minSize = 15;
