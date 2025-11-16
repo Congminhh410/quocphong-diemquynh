@@ -852,36 +852,26 @@
             </div>
         </section>
 
-        <section class="donate-section" id="donate-box">
-          <div class="container">
-            <div class="donate-header">
-              <h2>Hộp mừng cưới</h2>
-              <p>Nếu có thể, bạn hãy tới tham dự Đám cưới, chung vui và Mừng cưới trực tiếp cho chúng mình nha ^^. Cảm ơn bạn rất nhiều!</p>
+        <section class="guest-selector">
+          <h2>Bạn là khách mời của ai?</h2>
+          <div class="guest-options">
+            <div class="guest-card" onclick="showQR('groom')">
+              <img src="./images/avatar/chu_re.jpg" alt="Chú Rể">
+              <p>Chú Rể</p>
             </div>
-        
-            <div class="donate-box">
-              <!-- Chú rể -->
-              <div class="donate-card">
-                <h3>Mừng cưới đến chú rể</h3>
-                <img class="qr-code-image" src="./images/bank/bank.jpg" alt="QR chú rể">
-                <p>Ngân hàng: <strong>Techcombank</strong></p>
-                <p>Tên tài khoản: <strong>Vu Quoc Phong</strong></p>
-                <p>Số tài khoản: <strong>0577xxxx</strong></p>
-                <p>Chi nhánh: <strong>Hà Nội</strong></p>
-              </div>
-        
-              <!-- Cô dâu -->
-              <div class="donate-card">
-                <h3>Mừng cưới đến cô dâu</h3>
-                <img class="qr-code-image" src="./images/bank/bank.jpg" alt="QR cô dâu">
-                <p>Ngân hàng: <strong>Techcombank</strong></p>
-                <p>Tên tài khoản: <strong>Diem Quynh</strong></p>
-                <p>Số tài khoản: <strong>0577xxxx</strong></p>
-                <p>Chi nhánh: <strong>Hà Nội</strong></p>
-              </div>
+            <div class="guest-card" onclick="showQR('bride')">
+              <img src="./images/avatar/co_dau.jpg" alt="Cô Dâu">
+              <p>Cô Dâu</p>
             </div>
           </div>
+        
+          <div class="qr-display" id="qr-box">
+            <h3 id="qr-title"></h3>
+            <img id="qr-image" src="" alt="QR Code">
+            <p id="qr-info"></p>
+          </div>
         </section>
+
 
         <section class="wedding-gift-box" id="donate-box">
           <h2>Hộp mừng cưới</h2>
