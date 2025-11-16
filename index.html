@@ -867,15 +867,18 @@
         </section>
         
         <!-- Popup QR -->
-        <div class="qr-popup" id="qrPopup">
-          <div class="qr-content">
-            <span class="close-btn" onclick="closeQR()">×</span>
-            <h3 id="qrTitle"></h3>
-            <img id="qrImage" src="" alt="QR Code">
-            <p id="qrInfo"></p>
-            <button onclick="copySTK()">Sao chép STK</button>
+        <div class="qr-popup" id="qrPopup" onclick="outsideClick(event)">
+          <div class="qr-card">
+            <div class="qr-front">
+              <span class="close-btn" onclick="closeQR()">×</span>
+              <h3 id="qrTitle"></h3>
+              <img id="qrImage" src="" alt="QR Code">
+              <p id="qrInfo"></p>
+              <button onclick="copySTK()">Sao chép STK</button>
+            </div>
           </div>
         </div>
+
 
 
 
@@ -1040,6 +1043,14 @@
         alert('Đã sao chép STK: ' + stk);
       });
     }
+    function outsideClick(event) {
+      const popup = document.getElementById('qrPopup');
+      const content = document.querySelector('.qr-content');
+      if (!content.contains(event.target)) {
+        popup.style.display = 'none';
+      }
+    }
+
     </script>
 
 </body>
