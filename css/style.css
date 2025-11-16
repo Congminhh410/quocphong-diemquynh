@@ -5501,11 +5501,24 @@ z-index: 99999 !important;
 #1.5  donate-section
 --------------------------------------------------------------*/
 .wedding-gift-box {
-  background: url(../images/background_hoa.png) center/cover no-repeat;
+  position: relative;
   padding: 60px 20px;
   text-align: center;
   color: #fff;
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Dosis', sans-serif';
+  overflow: hidden;
+  z-index: 1;
+}
+
+.wedding-gift-box::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url(../images/background_hoa.png) center/cover no-repeat;
+  filter: blur(4px);       /* Làm mờ ảnh */
+  opacity: 0.5;            /* Giảm độ rõ */
+  z-index: -1;
 }
 
 .wedding-gift-box h2 {
