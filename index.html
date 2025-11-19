@@ -877,7 +877,7 @@
                   </div>
                       
                       <!-- Nút gửi lời chúc -->
-                        <button class="submit-btn" onclick="submitGuestInfo()">GỬI NGAY</button>
+                        <button class="submit-btn">GỬI NGAY</button>
                         <!-- Nút mở QR -->
                         <button class="donate-btn" onclick="openDonateQR()">MỪNG CƯỚI ĐẾN DÂU RỂ</button>
                   </div>
@@ -1022,22 +1022,22 @@
       }
     }
 
-    function submitGuestInfo() {
-    const attendance = document.querySelector('input[name="attendance"]:checked');
-    const name = document.getElementById('guestName').value.trim();
-    const note = document.getElementById('guestNote').value.trim();
+    // function submitGuestInfo() {
+    // const attendance = document.querySelector('input[name="attendance"]:checked');
+    // const name = document.getElementById('guestName').value.trim();
+    // const note = document.getElementById('guestNote').value.trim();
 
-    if (!selectedGuest || !attendance) {
-      alert("Bạn hãy chọn khách mời và xác nhận tham dự trước khi gửi nhé!");
-      return;
-    }
+    // if (!selectedGuest || !attendance) {
+    //   alert("Bạn hãy chọn khách mời và xác nhận tham dự trước khi gửi nhé!");
+    //   return;
+    // }
 
-    const guestData = {
-      type: selectedGuest, // 'bride' hoặc 'groom'
-      attend: attendance.value === 'yes' ? 'Có' : 'Không',
-      name: name,
-      note: note
-    };
+    // // const guestData = {
+    // //   type: selectedGuest, // 'bride' hoặc 'groom'
+    // //   attend: attendance.value === 'yes' ? 'Có' : 'Không',
+    // //   name: name,
+    // //   note: note
+    // // };
 
     //fetch("https://script.google.com/macros/s/)
 
