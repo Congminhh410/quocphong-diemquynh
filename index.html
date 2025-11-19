@@ -737,9 +737,21 @@
                                 <div>
                                     <input type="text" name="name" class="form-control" placeholder="Nhập họ tên*">
                                 </div>
-                                <div>
-                                    <input type="email" name="email" class="form-control" placeholder="Nhập email">
+                                
+                                <!-- Chọn khách mời -->
+                              <label class="gift-selector">Bạn là khách mời của ai?</label>
+                              <div class="guest-options">
+                                <div class="guest-card" onclick="selectGuest('bride')" id="guestBride">
+                                  <img src="./images/avatar/co_dau.jpg" alt="Cô Dâu">
+                                  <p>Cô Dâu</p>
                                 </div>
+                            
+                                <div class="guest-card" onclick="selectGuest('groom')" id="guestGroom">
+                                  <img src="./images/avatar/chu_re.jpg" alt="Chú Rể">
+                                  <p>Chú Rể</p>
+                                </div>
+                              </div>
+                                
                                 <div>
                                     <div class="textarea-emoji-picker">
                                         <div class="vitualTextarea">
@@ -829,6 +841,8 @@
                                         <i class="ti-reload"></i>
                                     </div>
                                 </div>
+                                <!-- Nút mở QR -->
+                                <button class="donate-btn" onclick="openDonateQR()">MỪNG CƯỚI ĐẾN DÂU RỂ</button>
                                 <div class="success-error-message">
                                     <div id="success">Thank you</div>
                                 </div>
