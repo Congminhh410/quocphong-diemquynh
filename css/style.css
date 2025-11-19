@@ -5627,12 +5627,8 @@ z-index: 99999 !important;
 
 .guest-card img {
   width: 100%;
-  height: auto;
-  max-height: 100px;
-  object-fit: cover;
-  border-radius: 12px;
+  border-radius: 8px;
   margin-bottom: 6px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .guest-card p {
