@@ -5626,9 +5626,12 @@ z-index: 99999 !important;
 }
 
 .guest-card img {
-  width: 100%;
-  border-radius: 8px;
+  width: 100% !important;
+  height: 140px !important;
+  object-fit: cover;
+  border-radius: 12px; /* Bo góc nhẹ và mượt */
   margin-bottom: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .guest-card p {
