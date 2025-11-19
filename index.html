@@ -880,15 +880,18 @@
 
         
         <!-- Popup QR -->
-        <div class="qr-popup" id="qrPopup" onclick="outsideClick(event)">
+        <div id="qrPopup" class="qr-popup" onclick="outsideClick(event)">
           <div class="qr-card">
-            <span class="close-btn" onclick="closeQR()">×</span>
-            <h3 id="qrTitle"></h3>
-            <img id="qrImage" src="" alt="QR Code">
-            <p id="qrInfo"></p>
-            <button onclick="copySTK()">Sao chép STK</button>
+            <div class="qr-front">
+              <span class="close-btn" onclick="closeQR()">×</span>
+              <h3 id="qrTitle"></h3>
+              <img id="qrImage" src="" alt="QR Code">
+              <p id="qrInfo"></p>
+              <button onclick="copySTK()">Sao chép STK</button>
+            </div>
           </div>
         </div>
+
 
 
 
@@ -1044,7 +1047,13 @@
     
       // Đóng popup
       function closeQR() {
-        document.getElementById('qrPopup').style.display = 'none';
+        const popup = document.getElementById('qrPopup');
+          const content = document.querySelector('.qr-front');
+          content.classList.add('close');
+          setTimeout(() => {
+            popup.style.display = 'none';
+            content.classList.remove('close');
+          }, 400);
       }
     
       // Click ra ngoài để đóng
@@ -1052,19 +1061,32 @@
         const popup = document.getElementById('qrPopup');
         const content = document.querySelector('.qr-card'); 
         if (popup.style.display === 'flex' && !content.contains(event.target)) {
-          popup.style.display = 'none';
+          closeQR();
         }
       }
-    
+
+       function showToast(message) {
+          const toast = document.createElement('div');
+          toast.className = 'toast';
+          toast.textContent = message;
+          document.body.appendChild(toast);
+        
+          setTimeout(() => toast.classList.add('show'), 100);
+          setTimeout(() => {
+            toast.classList.remove('show');
+            setTimeout(() => toast.remove(), 400);
+          }, 2000);
+        }
       // Copy STK
       function copySTK() {
-        const match = info.match(/STK:\s*(\d+)/);
-        if (match) {
-          const stk = match[1];
-          navigator.clipboard.writeText(stk).then(() => {
-            alert('Đã sao chép STK: ' + stk);
-          });
-        }
+        const info = document.getElementById('qrInfo').textContent;
+          const match = info.match(/STK:\s*(\d+)/);
+          if (match) {
+            const stk = match[1];
+            navigator.clipboard.writeText(stk).then(() => {
+              showToast('Đã sao chép STK: ' + stk);
+            });
+          }
       }
     </script>
 
