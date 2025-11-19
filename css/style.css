@@ -5657,7 +5657,7 @@ z-index: 99999 !important;
 
 .guest-card {
   width: 120px;
-  border: 2px solid #d94c7c;
+  border: 2px solid #1e88e5; /* xanh đậm */
   border-radius: 12px;
   padding: 10px;
   text-align: center;
