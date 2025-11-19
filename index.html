@@ -1058,12 +1058,13 @@
     
       // Copy STK
       function copySTK() {
-        const info = document.getElementById('qrInfo').textContent;
-        const stk = info.split('·')[0].replace('STK: ', '').trim();
-    
-        navigator.clipboard.writeText(stk).then(() => {
-          alert('Đã sao chép STK: ' + stk);
-        });
+        const match = info.match(/STK:\s*(\d+)/);
+        if (match) {
+          const stk = match[1];
+          navigator.clipboard.writeText(stk).then(() => {
+            alert('Đã sao chép STK: ' + stk);
+          });
+        }
       }
     </script>
 
