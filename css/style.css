@@ -5539,7 +5539,7 @@ z-index: 99999 !important;
 .wedding-gift-box {
   position: relative;
   width: 100vw; /* Chiếm toàn bộ chiều ngang */
-  min-height: 100vh; /* Nếu muốn chiếm toàn bộ chiều cao */
+  /* min-height: 100vh; /* Nếu muốn chiếm toàn bộ chiều cao */ 
   padding: 60px 20px;
   text-align: center;
   color: #fff;
