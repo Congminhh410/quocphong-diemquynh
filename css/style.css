@@ -5637,6 +5637,22 @@ z-index: 99999 !important;
   margin: 0;
 }
 
+@media (max-width: 600px) {
+  .guest-card {
+    width: 100px;
+    padding: 8px;
+  }
+
+  .guest-card img {
+    aspect-ratio: 3 / 4; /* Vuông hơn trên mobile nếu muốn */
+    max-height: 100px;
+  }
+
+  .guest-card p {
+    font-size: 14px;
+  }
+}
+
 .guest-card:hover {
   transform: scale(1.05);
 }
@@ -5848,14 +5864,24 @@ z-index: 99999 !important;
   transform: translateX(-50%);
   background: #d94c7c;
   color: white;
-  padding: 10px 20px;
+  padding: 8px 16px;
   border-radius: 8px;
   font-weight: bold;
+  font-size: 14px; /* nhỏ gọn hơn */
+  max-width: 90%; /* tránh tràn màn hình nhỏ */
+  text-align: center;
   opacity: 0;
   transition: opacity 0.4s ease;
   z-index: 1000;
 }
 .toast.show { opacity: 1; }
+@media (max-width: 480px) {
+  .toast {
+    font-size: 12px;
+    padding: 6px 12px;
+    bottom: 10px;
+  }
+}
 
 /* Responsive */
 @media (max-width: 600px) {
