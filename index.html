@@ -737,32 +737,10 @@
                                 <div>
                                     <input type="text" name="name" class="form-control" placeholder="Nhập họ tên*">
                                 </div>
-                                <!-- Câu hỏi tham dự -->
-                                <div class="attendance-question">
-                                  <label for="attendanceSelect" class="gift-selector">Bạn sẽ đến chứ?</label>
-                                  <select id="attendanceSelect" class="input-field">
-                                    <option value="">-- Chọn một lựa chọn --</option>
-                                    <option value="yes">Có, tôi chắc chắn sẽ đến</option>
-                                    <option value="no">Không, tôi bận mất rồi :(</option>
-                                  </select>
+                                <div>
+                                    <input type="email" name="email" class="form-control" placeholder="Nhập email">
                                 </div>
-                    
-                                    
-                                  <!-- Chọn khách mời -->
-                                  <label class="gift-selector">Bạn là khách mời của ai?</label>
-                                  <div class="guest-options">
-                                    <div class="guest-card" onclick="selectGuest('bride')" id="guestBride">
-                                      <img src="./images/avatar/co_dau.jpg" alt="Cô Dâu">
-                                      <p>Cô Dâu</p>
-                                    </div>
-                                
-                                    <div class="guest-card" onclick="selectGuest('groom')" id="guestGroom">
-                                      <img src="./images/avatar/chu_re.jpg" alt="Chú Rể">
-                                      <p>Chú Rể</p>
-                                    </div>
-                                  </div>
-
-                                    
+                                <div>
                                     <div class="textarea-emoji-picker">
                                         <div class="vitualTextarea">
                                             <textarea rows='5' id="content" class="form-control" name="content"
@@ -856,8 +834,6 @@
                                 </div>
                             </form>
                         </div>
-                    <!-- Nút mở QR -->
-                    <button class="donate-btn" onclick="openDonateQR()">MỪNG CƯỚI ĐẾN DÂU RỂ</button>
                     </div>
                     <div class="col col-md-6 ">
                         <!-- Panel nhập key admin -->
