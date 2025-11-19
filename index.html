@@ -909,9 +909,9 @@
 
         
         <!-- Popup QR -->
-        <div id="qrPopup" class="qr-popup" onclick="outsideClick(event)">
+        <div id="qrPopup" class="qr-popup" style="display:none;" onclick="outsideClick(event)">
           <div class="qr-card">
-            <div class="qr-front">
+            <div class="qr-front" id="qrFront">
               <span class="close-btn" onclick="closeQR()">×</span>
               <h3 id="qrTitle">MỪNG CƯỚI ĐẾN CHÚNG MÌNH</h3>
               <img id="qrImage" src="" alt="QR Code">
@@ -1129,6 +1129,14 @@
           }, 2000);
         }
       // Copy STK
+
+    function downloadQR() {
+      const img = document.getElementById('qrImage');
+      const link = document.createElement('a');
+      link.href = img.src;
+      link.download = 'qr_mung_cuoi.jpg';
+      link.click();
+    }
       function copySTK() {
         const info = document.getElementById('qrInfo').textContent;
           const match = info.match(/STK:\s*(\d+)/);
