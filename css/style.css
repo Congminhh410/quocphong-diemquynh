@@ -5610,34 +5610,37 @@ z-index: 99999 !important;
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .guest-card {
-  width: 120px;
-  border: 2px solid #d94c7c;
-  border-radius: 12px;
-  padding: 10px;
-  text-align: center;
-  background-color: #fff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 140px;
+  background: #fff;
+  border: 2px solid #ccc;
+  border-radius: 14px;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  overflow: hidden;
+  transition: 0.25s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 .guest-card img {
   width: 100%;
-  border-radius: 8px;
-  margin-bottom: 6px;
+  height: 180px;
+  object-fit: cover;
 }
 
 .guest-card p {
-  font-weight: bold;
+  padding: 10px 0;
+  font-weight: 700;
   color: #d94c7c;
-  margin: 0;
 }
 
-.guest-card:hover {
-  transform: scale(1.05);
+/* Khi được chọn */
+.guest-card.active {
+  border: 3px solid #8a0c0c;
+  box-shadow: 0 0 12px rgba(138,12,12,0.4);
+  transform: scale(1.03);
 }
 
 .qr-popup {
@@ -5718,8 +5721,38 @@ z-index: 99999 !important;
   }
 }
 
+/* =========================
+   NÚT GỬI LỜI CHÚC
+   ========================= */
+.submit-btn {
+  width: 100%;
+  margin-top: 25px;
+  padding: 12px;
+  background: #d94c7c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+}
 
 
+/* =========================
+   NÚT MỞ QR — kiểu mới
+   ========================= */
+.donate-btn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+  background: white;
+  color: #8a0c0c;
+  border: 2px solid #8a0c0c;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+}
 
 
 
