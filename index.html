@@ -852,38 +852,30 @@
             </div>
         </section>
 
-        <section class="wedding-gift-box" id="donate-box">
+        <section class="wedding-gift-box">
           <h2>Hộp mừng cưới</h2>
-          <p class="intro-text">
-            Nếu có thể, bạn hãy tới tham dự đám cưới, chung vui và mừng cưới trực tiếp cho chúng mình nha ^^. Cảm ơn bạn rất nhiều!
-          </p>
         
           <!-- Chọn khách mời -->
-          <section class="guest-selector">
-            <h3>Bạn là khách mời của ai?</h3>
-            <div class="guest-options">
-              <div class="guest-card" onclick="selectGuest('groom')">
-                <img src="./images/avatar/chu_re.jpg" alt="Chú Rể">
-                <p>Chú Rể</p>
-              </div>
-        
-              <div class="guest-card" onclick="selectGuest('bride')">
-                <img src="./images/avatar/co_dau.jpg" alt="Cô Dâu">
-                <p>Cô Dâu</p>
-              </div>
+          <label class="gift-label">Bạn là khách mời của ai?</label>
+          <div class="guest-select-box">
+            <div class="guest-item" onclick="selectGuest('bride')" id="guestBride">
+              <img src="./images/avatar/co_dau.jpg" alt="Cô Dâu">
+              <p>Cô Dâu</p>
             </div>
-          </section>
         
-          <!-- Hỏi khả năng tham dự -->
-          <div class="attend-box">
-            <h3>Bạn có thể tham dự chứ?</h3>
-        
-            <div class="btn-group">
-              <button onclick="sendInfo()" class="btn-primary">Gửi thông tin đến dâu rể</button>
-              <button onclick="openDonate()" class="btn-secondary">Mừng cưới đến dâu rể</button>
+            <div class="guest-item" onclick="selectGuest('groom')" id="guestGroom">
+              <img src="./images/avatar/chu_re.jpg" alt="Chú Rể">
+              <p>Chú Rể</p>
             </div>
           </div>
+        
+          <!-- Nút gửi lời chúc -->
+          <button class="submit-btn">GỬI NGAY</button>
+        
+          <!-- Nút mở QR -->
+          <button class="donate-btn" onclick="openDonateQR()">MỪNG CƯỚI ĐẾN DÂU RỂ</button>
         </section>
+
         
         <!-- Popup QR -->
         <div class="qr-popup" id="qrPopup" onclick="outsideClick(event)">
@@ -1002,22 +994,31 @@
     <script type="module" src="./common/emoji-picker/js/init.js"></script>
 
     <script>
-      let selectedGuest = null; // Lưu khách mời được chọn
+      let selectedGuest = null;
+
+     function selectGuest(type) {
+      selectedGuest = type;
     
-      // Khi click vào avatar
-      function selectGuest(type) {
-        selectedGuest = type;
-        console.log("Đã chọn: " + (type === "groom" ? "Chú rể" : "Cô dâu"));
-      }
+      // Reset active
+      document.getElementById('guestBride').classList.remove('active');
+      document.getElementById('guestGroom').classList.remove('active');
     
-      // Chỉ khi bấm nút "Mừng cưới" thì mới hiện QR
-      function openDonateQR() {
-        if (!selectedGuest) {
-          alert("Bạn hãy chọn xem bạn là khách của ai trước nhé!");
-          return;
-        }
-        showQR(selectedGuest);
+      // Set active item
+      if (type === "bride") {
+        document.getElementById('guestBride').classList.add('active');
+      } else {
+        document.getElementById('guestGroom').classList.add('active');
       }
+    }
+    
+    function openDonateQR() {
+      if (!selectedGuest) {
+        alert("Bạn hãy chọn xem bạn là khách của ai trước nhé!");
+        return;
+      }
+      showQR(selectedGuest);
+    }
+
     
       // Hàm hiển thị popup QR
       function showQR(type) {
