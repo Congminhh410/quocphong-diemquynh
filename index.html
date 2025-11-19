@@ -861,12 +861,14 @@
 
             <!-- Câu hỏi tham dự -->
             <div class="attendance-question">
-              <label class="gift-selector">Bạn sẽ đến chứ?</label>
-              <div class="attendance-options">
-                <label><input type="radio" name="attendance" value="yes"> Có, tôi sẽ đến</label>
-                <label><input type="radio" name="attendance" value="no"> Không, tôi bận rồi</label>
-              </div>
+              <label for="attendanceSelect" class="gift-selector">Bạn sẽ đến chứ?</label>
+              <select id="attendanceSelect" class="input-field">
+                <option value="">-- Chọn một lựa chọn --</option>
+                <option value="yes">Có, tôi chắc chắn sẽ đến</option>
+                <option value="no">Không, tôi bận mất rồi :(</option>
+              </select>
             </div>
+
                 
               <!-- Chọn khách mời -->
               <label class="gift-selector">Bạn là khách mời của ai?</label>
@@ -1049,7 +1051,7 @@
       note: note
     };
 
-    fetch("https://script.google.com/macros/s/)
+    //fetch("https://script.google.com/macros/s/)
 
     function openDonateQR() {
       if (!selectedGuest) {
