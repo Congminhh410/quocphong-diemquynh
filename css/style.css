@@ -5580,6 +5580,12 @@ z-index: 99999 !important;
   flex-wrap: wrap;
 }
 
+.gift-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
 .gift-card {
   width: 120px;
   border: 2px solid #d94c7c;
