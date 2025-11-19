@@ -858,6 +858,16 @@
             <div class="gift-content">
               <h2>Hộp mừng cưới</h2>
               <p class="intro-text">Nếu có thể, bạn hãy tới tham dự đám cưới, chung vui và mừng cưới trực tiếp cho chúng mình nha ^^. Cảm ơn bạn rất nhiều!</p>
+
+            <!-- Câu hỏi tham dự -->
+            <div class="attendance-question">
+              <label class="gift-selector">Bạn sẽ đến chứ?</label>
+              <div class="attendance-options">
+                <label><input type="radio" name="attendance" value="yes"> Có, tôi sẽ đến</label>
+                <label><input type="radio" name="attendance" value="no"> Không, tôi bận rồi</label>
+              </div>
+            </div>
+                
               <!-- Chọn khách mời -->
               <label class="gift-selector">Bạn là khách mời của ai?</label>
               <div class="guest-options">
@@ -871,6 +881,10 @@
                   <p>Chú Rể</p>
                 </div>
               </div>
+
+              <!-- Tên và lời nhắn -->
+              <input type="text" id="guestName" placeholder="Tên của bạn" class="input-field">
+              <textarea id="guestNote" placeholder="Lời nhắn cho cô dâu chú rể" class="input-field"></textarea>
             
               <!-- Nút gửi lời chúc -->
               <button class="submit-btn">GỬI NGAY</button>
@@ -1017,7 +1031,26 @@
         document.getElementById('guestGroom').classList.add('active');
       }
     }
-    
+
+    function submitGuestInfo() {
+    const attendance = document.querySelector('input[name="attendance"]:checked');
+    const name = document.getElementById('guestName').value.trim();
+    const note = document.getElementById('guestNote').value.trim();
+
+    if (!selectedGuest || !attendance) {
+      alert("Bạn hãy chọn khách mời và xác nhận tham dự trước khi gửi nhé!");
+      return;
+    }
+
+    const guestData = {
+      type: selectedGuest, // 'bride' hoặc 'groom'
+      attend: attendance.value === 'yes' ? 'Có' : 'Không',
+      name: name,
+      note: note
+    };
+
+    fetch("https://script.google.com/macros/s/)
+
     function openDonateQR() {
       if (!selectedGuest) {
         alert("Bạn hãy chọn xem bạn là khách của ai trước nhé!");
