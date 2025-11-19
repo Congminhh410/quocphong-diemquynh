@@ -855,27 +855,29 @@
         
         
         <section class="wedding-gift-box">
-          <h2>Hộp mừng cưới</h2>
-          <p class="intro-text">Nếu có thể, bạn hãy tới tham dự đám cưới, chung vui và mừng cưới trực tiếp cho chúng mình nha ^^. Cảm ơn bạn rất nhiều!</p>
-          <!-- Chọn khách mời -->
-          <label class="gift-selector">Bạn là khách mời của ai?</label>
-          <div class="guest-options">
-            <div class="guest-card" onclick="selectGuest('bride')" id="guestBride">
-              <img src="./images/avatar/co_dau.jpg" alt="Cô Dâu">
-              <p>Cô Dâu</p>
+            <div class="gift-content">
+              <h2>Hộp mừng cưới</h2>
+              <p class="intro-text">Nếu có thể, bạn hãy tới tham dự đám cưới, chung vui và mừng cưới trực tiếp cho chúng mình nha ^^. Cảm ơn bạn rất nhiều!</p>
+              <!-- Chọn khách mời -->
+              <label class="gift-selector">Bạn là khách mời của ai?</label>
+              <div class="guest-options">
+                <div class="guest-card" onclick="selectGuest('bride')" id="guestBride">
+                  <img src="./images/avatar/co_dau.jpg" alt="Cô Dâu">
+                  <p>Cô Dâu</p>
+                </div>
+            
+                <div class="guest-card" onclick="selectGuest('groom')" id="guestGroom">
+                  <img src="./images/avatar/chu_re.jpg" alt="Chú Rể">
+                  <p>Chú Rể</p>
+                </div>
+              </div>
+            
+              <!-- Nút gửi lời chúc -->
+              <button class="submit-btn">GỬI NGAY</button>
+            
+              <!-- Nút mở QR -->
+              <button class="donate-btn" onclick="openDonateQR()">MỪNG CƯỚI ĐẾN DÂU RỂ</button>
             </div>
-        
-            <div class="guest-card" onclick="selectGuest('groom')" id="guestGroom">
-              <img src="./images/avatar/chu_re.jpg" alt="Chú Rể">
-              <p>Chú Rể</p>
-            </div>
-          </div>
-        
-          <!-- Nút gửi lời chúc -->
-          <button class="submit-btn">GỬI NGAY</button>
-        
-          <!-- Nút mở QR -->
-          <button class="donate-btn" onclick="openDonateQR()">MỪNG CƯỚI ĐẾN DÂU RỂ</button>
         </section>
 
         
