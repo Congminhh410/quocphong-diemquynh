@@ -5626,10 +5626,11 @@ z-index: 99999 !important;
 }
 
 .guest-card img {
-  width: 100% !important;
-  height: 140px !important;
+  width: 100%;
+  height: auto;
+  max-height: 100px;
   object-fit: cover;
-  border-radius: 12px; /* Bo góc nhẹ và mượt */
+  border-radius: 12px;
   margin-bottom: 6px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -5650,6 +5651,22 @@ z-index: 99999 !important;
   box-shadow: 0 0 12px rgba(138, 12, 12, 0.35);
   transform: scale(1.07);
 }
+
+@media (max-width: 600px) {
+  .guest-card {
+    width: 100px;
+    padding: 8px;
+  }
+
+  .guest-card img {
+    max-height: 80px;
+  }
+
+  .guest-card p {
+    font-size: 14px;
+  }
+}
+
 
 
 .qr-popup {
