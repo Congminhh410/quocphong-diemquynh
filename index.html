@@ -850,12 +850,12 @@
                                         <i class="ti-reload"></i>
                                     </div>
                                 </div>
-                                <!-- Nút mở QR -->
-                                <button class="donate-btn" onclick="openDonateQR()">MỪNG CƯỚI ĐẾN DÂU RỂ</button>
                                 <!-- <div class="success-error-message">
                                     <div id="success">Thank you</div>
                                 </div> -->
                             </form>
+                            <!-- Nút mở QR -->
+                            <button class="donate-btn" onclick="openDonateQR()">MỪNG CƯỚI ĐẾN DÂU RỂ</button>
                         </div>
                     </div>
                     <div class="col col-md-6 ">
@@ -913,10 +913,13 @@
           <div class="qr-card">
             <div class="qr-front">
               <span class="close-btn" onclick="closeQR()">×</span>
-              <h3 id="qrTitle"></h3>
+              <h3 id="qrTitle">MỪNG CƯỚI ĐẾN CHÚNG MÌNH</h3>
               <img id="qrImage" src="" alt="QR Code">
               <p id="qrInfo"></p>
-              <button onclick="copySTK()">Sao chép STK</button>
+              <div class="qr-actions">
+                  <button onclick="downloadQR()">Tải ảnh QR</button>
+                  <button onclick="copySTK()">Sao chép STK</button>
+              </div>
             </div>
           </div>
         </div>
