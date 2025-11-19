@@ -5500,7 +5500,7 @@ z-index: 99999 !important;
 /*--------------------------------------------------------------
 #1.5  donate-section
 --------------------------------------------------------------*/
-.wedding-gift-box {
+/* .wedding-gift-box {
   position: relative;
   padding: 60px 20px;
   text-align: center;
@@ -5516,8 +5516,8 @@ z-index: 99999 !important;
   top: 0; left: 0;
   width: 100%; height: 100%;
   background: url(../images/background_hoa.png) center/cover no-repeat;
-  filter: blur(4px);       /* Làm mờ ảnh */
-  opacity: 0.5;            /* Giảm độ rõ */
+  filter: blur(4px);
+  opacity: 0.5;
   z-index: -1;
 }
 
@@ -5535,6 +5535,40 @@ z-index: 99999 !important;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+} */
+.wedding-gift-box {
+  position: relative;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: 'Dosis', sans-serif;
+  overflow: hidden;
+  z-index: 1;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.wedding-gift-box::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url(../images/background_hoa.png) center/cover no-repeat;
+  filter: blur(4px);
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.wedding-gift-box h2 {
+  font-size: 36px;
+  color: #d94c7c;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 10px;
+}
+
+.wedding-gift-box .intro-text {
+  font-size: 18px;
+  color: #d94c7c;
+  margin-bottom: 24px;
 }
 
 .gift-container {
@@ -5884,20 +5918,32 @@ z-index: 99999 !important;
 }
 
 /* Responsive */
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   .guest-card { width: 100px; padding: 8px; }
   .qr-card { max-width: 90%; padding: 16px; }
   .qr-front h3 { font-size: 18px; }
   .qr-front p { font-size: 14px; }
   .qr-front button { padding: 8px 16px; font-size: 14px; }
-}
+} */
 
 /* =========================
    NÚT GỬI LỜI CHÚC
    ========================= */
-.submit-btn {
+/* .submit-btn {
   width: 100%;
   margin-top: 25px;
+  padding: 12px;
+  background: #d94c7c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+} */
+.submit-btn {
+  width: 100%;
+  margin-top: 20px;
   padding: 12px;
   background: #d94c7c;
   color: white;
@@ -5912,6 +5958,18 @@ z-index: 99999 !important;
 /* =========================
    NÚT MỞ QR — kiểu mới
    ========================= */
+/* .donate-btn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+  background: white;
+  color: #8a0c0c;
+  border: 2px solid #8a0c0c;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+} */
 .donate-btn {
   width: 100%;
   margin-top: 12px;
@@ -5924,8 +5982,35 @@ z-index: 99999 !important;
   font-size: 16px;
   cursor: pointer;
 }
+@media (max-width: 480px) {
+  .wedding-gift-box {
+    padding: 30px 12px;
+  }
 
+  .wedding-gift-box h2 {
+    font-size: 28px;
+  }
 
+  .guest-card {
+    width: 100px;
+    padding: 8px;
+  }
+
+  .guest-card img {
+    aspect-ratio: 1 / 1;
+    max-height: 100px;
+  }
+
+  .guest-card p {
+    font-size: 14px;
+  }
+
+  .submit-btn,
+  .donate-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
 
 @keyframes fadeInUp {
   from {
