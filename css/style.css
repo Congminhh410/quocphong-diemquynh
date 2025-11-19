@@ -5898,6 +5898,27 @@ z-index: 99999 !important;
   to { opacity: 0; transform: scale(0.95); }
 }
 
+.qr-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.qr-actions button {
+  background-color: #d94c7c;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.qr-actions button:hover {
+  background-color: #b83a65;
+}
 
 /* Toast */
 .toast {
