@@ -5701,8 +5701,9 @@ z-index: 99999 !important;
 
 /*  Hiệu ứng khi được chọn*/
 .guest-card.active {
-  border: 3px solid #8a0c0c;
-  box-shadow: 0 0 12px rgba(138, 12, 12, 0.35);
+  background-color: #e0f7ff; /* xanh nhạt */
+  border: 2px solid #1e88e5; /* xanh đậm */
+  box-shadow: 0 0 12px rgba(30, 136, 229, 0.35);
   transform: scale(1.07);
 }
 
@@ -6044,7 +6045,14 @@ z-index: 99999 !important;
   outline: none;
 }
 
-
+/* Tăng khoảng cách giữa các khối */
+.attendance-question,
+.guest-options,
+.input-field,
+.form-control,
+.gift-selector {
+  margin-bottom: 20px;
+}
 
 @keyframes fadeInUp {
   from {
