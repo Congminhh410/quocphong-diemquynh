@@ -852,16 +852,35 @@
             </div>
         </section>
 
-        <section class="guest-selector">
-          <h2>Bạn là khách mời của ai?</h2>
-          <div class="guest-options">
-            <div class="guest-card" onclick="showQR('groom')">
-              <img src="./images/avatar/chu_re.jpg" alt="Chú Rể">
-              <p>Chú Rể</p>
+        <section class="wedding-gift-box" id="donate-box">
+          <h2>Hộp mừng cưới</h2>
+          <p class="intro-text">
+            Nếu có thể, bạn hãy tới tham dự đám cưới, chung vui và mừng cưới trực tiếp cho chúng mình nha ^^. Cảm ơn bạn rất nhiều!
+          </p>
+        
+          <!-- Chọn khách mời -->
+          <section class="guest-selector">
+            <h3>Bạn là khách mời của ai?</h3>
+            <div class="guest-options">
+              <div class="guest-card" onclick="selectGuest('groom')">
+                <img src="./images/avatar/chu_re.jpg" alt="Chú Rể">
+                <p>Chú Rể</p>
+              </div>
+        
+              <div class="guest-card" onclick="selectGuest('bride')">
+                <img src="./images/avatar/co_dau.jpg" alt="Cô Dâu">
+                <p>Cô Dâu</p>
+              </div>
             </div>
-            <div class="guest-card" onclick="showQR('bride')">
-              <img src="./images/avatar/co_dau.jpg" alt="Cô Dâu">
-              <p>Cô Dâu</p>
+          </section>
+        
+          <!-- Hỏi khả năng tham dự -->
+          <div class="attend-box">
+            <h3>Bạn có thể tham dự chứ?</h3>
+        
+            <div class="btn-group">
+              <button onclick="sendInfo()" class="btn-primary">Gửi thông tin đến dâu rể</button>
+              <button onclick="openDonate()" class="btn-secondary">Mừng cưới đến dâu rể</button>
             </div>
           </div>
         </section>
@@ -869,45 +888,14 @@
         <!-- Popup QR -->
         <div class="qr-popup" id="qrPopup" onclick="outsideClick(event)">
           <div class="qr-card">
-            <div class="qr-front">
-              <span class="close-btn" onclick="closeQR()">×</span>
-              <h3 id="qrTitle"></h3>
-              <img id="qrImage" src="" alt="QR Code">
-              <p id="qrInfo"></p>
-              <button onclick="copySTK()">Sao chép STK</button>
-            </div>
+            <span class="close-btn" onclick="closeQR()">×</span>
+            <h3 id="qrTitle"></h3>
+            <img id="qrImage" src="" alt="QR Code">
+            <p id="qrInfo"></p>
+            <button onclick="copySTK()">Sao chép STK</button>
           </div>
         </div>
 
-
-
-
-        <section class="wedding-gift-box" id="donate-box">
-          <h2>Hộp mừng cưới</h2>
-          <p class="intro-text">
-            Nếu có thể, bạn hãy tới tham dự Đám cưới, chung vui và Mừng cưới trực tiếp cho chúng mình nha ^^. Cảm ơn bạn rất nhiều!
-          </p>
-        
-          <div class="gift-container">
-            <!-- Chú rể -->
-            <div class="gift-card">
-              <h3>Mừng cưới đến chú rể</h3>
-              <img class="qr-code-image" src="./images/bank/bank.jpg" alt="QR Techcombank">
-              <p>Ngân hàng: Techcombank</p>
-              <p>Tên: Vu Quoc Phong</p>
-              <p>STK: 0577xxxx</p>
-            </div>
-        
-            <!-- Cô dâu -->
-            <div class="gift-card">
-              <h3>Mừng cưới đến cô dâu</h3>
-              <img class="qr-code-image" src="./images/bank/bank.jpg" alt="QR Vietcombank">
-              <p>Ngân hàng: Vietcombank</p>
-              <p>Tên: Diem Quynh</p>
-              <p>STK: 0577xxxx</p>
-            </div>
-          </div>
-        </section>
 
 
         <footer class="site-footer footer-style-1 bg-1">
