@@ -6070,17 +6070,28 @@ z-index: 99999 !important;
   cursor: pointer;
 } */
 .donate-btn {
-  width: 100%;
-  margin-top: 12px;
-  padding: 12px;
+  padding: 8px 20px;               /* thu nhỏ nút */
+  font-size: 14px;                 /* giảm cỡ chữ */
   background: white;
   color: #8a0c0c;
   border: 2px solid #8a0c0c;
-  border-radius: 10px;
+  border-radius: 30px;             /* bo tròn mềm mại hơn */
   font-weight: 700;
-  font-size: 16px;
   cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  display: inline-block;
+  min-width: 180px;
 }
+
+/* Hiệu ứng khi trỏ chuột vào */
+.donate-btn:hover {
+  background: #8a0c0c;            /* nền chuyển sang đỏ */
+  color: white;                   /* chữ trắng nổi bật */
+  box-shadow: 0 0 10px rgba(138, 12, 12, 0.3); /* hiệu ứng bóng */
+  transform: scale(1.05);         /* phóng nhẹ nút */
+}
+
 @media (max-width: 480px) {
   .wedding-gift-box {
     padding: 30px 12px;
