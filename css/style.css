@@ -2678,7 +2678,7 @@ img {
 @media (max-width: 991px) {
     .hero-slider .swiper-button-prev,
     .hero-slider .swiper-button-next {
-        display: flex;
+        display: block;
     }
 }
 
@@ -2781,8 +2781,6 @@ img {
     top: 50%;
     transform: translateY(-50%);
     position: absolute;
-	z-index: 3;
-    position: relative;
 }
 
 .hero-style-1 #curve-text,
@@ -2800,24 +2798,24 @@ img {
     border-bottom: 1px solid #fff;
 }
 
-/* .hero-style-1 .couple-name,
-.hero-static .couple-name {
-    font-size: 100px;
-    color: #fff;
-    text-shadow: 0px 4px 0px rgba(0, 0, 0, 0.35);
-    font-weight: 600;
-    margin: 0;
-} */
-
 .hero-style-1 .couple-name,
 .hero-static .couple-name {
-    font-family: 'Playfair Display', serif; /* hoặc font bạn chọn */
     font-size: 100px;
     color: #fff;
     text-shadow: 0px 4px 0px rgba(0, 0, 0, 0.35);
     font-weight: 600;
     margin: 0;
 }
+
+/* .hero-style-1 .couple-name,
+.hero-static .couple-name {
+    font-family: 'Playfair Display', serif; /* hoặc font bạn chọn 
+    font-size: 100px;
+    color: #fff;
+    text-shadow: 0px 4px 0px rgba(0, 0, 0, 0.35);
+    font-weight: 600;
+    margin: 0;
+} */
 
 
 @media (max-width: 1199px) {
@@ -5704,6 +5702,11 @@ z-index: 99999 !important;
 	pointer-events: none; /* không ảnh hưởng đến tương tác */
 }
 
+@media (max-width: 767px) {
+    .hero-slider .slide-inner::after {
+        background: rgba(0, 0, 0, 0.45); /* tăng độ mờ */
+    }
+}
 
 .slide-inner {
   position: relative;
