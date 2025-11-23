@@ -5181,7 +5181,7 @@ z-index: 99999 !important;
 	z-index: 99999;
 }
 #menu-access > ul >li{
-	background-color: #df4758;
+	background-color: #00796B;
 	border-radius: 50%;
 	-ms-border-radius: 50%;
 	-webkit-border-radius:50%;
@@ -5223,7 +5223,7 @@ z-index: 99999 !important;
 	-webkit-border-radius:50%;
 	-ms-border-radius: 50%;
 	-o-border-radius: 50%;
-	background-color: #df4758;
+	background-color: #00796B;
 	transition: all 2s ease-in;
 	position: relative;
 	bottom: -156px;
@@ -5321,7 +5321,8 @@ z-index: 99999 !important;
 	width: 130px;
     font-family: sans-serif; 
 	font-size: 14px;
-	background-color: #df4758;
+	/* background-color: #df4758; */
+	background-color: #c;
 	color: #fff;
 	text-align: center;
 	border-radius: 6px;
@@ -5339,7 +5340,7 @@ z-index: 99999 !important;
 	margin-top: -5px;
 	border-width: 5px;
 	border-style: solid;
-	border-color: transparent transparent transparent #df4758;
+	border-color: transparent transparent transparent #00796B;
 }
 .tooltipBtn:hover .tooltiptext {
 	visibility: visible;
