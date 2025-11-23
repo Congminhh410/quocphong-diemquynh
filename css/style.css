@@ -5017,7 +5017,7 @@ display: flex;
 	justify-content: center;
 }
 
-/* .website_info_container .theme-btn {
+.website_info_container .theme-btn {
     width: 30%;
     min-width: 250px;
     margin: 10px;
@@ -5044,14 +5044,14 @@ display: flex;
 	.website_info {
 	padding: 40px 0;
 }
-} */
-
-/* Hover viền */
+}
+ 
+/* Hover viền 
 .website_info_container .theme-btn:hover {
     border: 1px solid #004D40;
 }
 
-/* Nội dung bên trong nút */
+/* Nội dung bên trong nút 
 .website_info_container .theme-btn .content-button {
     display: flex;
     align-items: center;
@@ -5059,18 +5059,19 @@ display: flex;
     gap: 8px;
 }
 
-/* Icon SVG */
+/* Icon SVG 
 .website_info_container .theme-btn .content-button svg {
     margin-right: 5px;
 }
 
-/* Responsive */
+/* Responsive 
 @media (max-width: 767px) {
     .theme-btn,
     .theme-btn-s2 {
         font-size: 14px;
     }
 }
+*/
 
 .donate-modal-content {
     position: relative;
