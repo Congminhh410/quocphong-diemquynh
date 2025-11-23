@@ -461,7 +461,7 @@ img {
     color: #3e7884;
 }
 
-.theme-btn {
+/* .theme-btn {
     margin-right: 15px;
     background-color: #3e7884;
     color: #fff;
@@ -477,11 +477,26 @@ img {
     -ms-transition: all 0.3s;
     transition: all 0.3s;
     text-transform: uppercase;
+} */
+
+.theme-btn,
+.theme-btn-s2 {
+    margin-right: 15px;
+    background-color: #00796B; /* xanh ngọc đậm */
+    color: #FFFFFF; /* chữ trắng */
+    font-weight: bold;
+    padding: 12px 30px;
+    border: 0;
+    outline: 0;
+    display: inline-block;
+    border-radius: 50px;
+    transition: all 0.3s;
+    text-transform: uppercase;
 }
 
-.theme-btn:hover {
+/* .theme-btn:hover {
     background-color: #f8fffe;
-}
+} */
 
 @media (max-width: 767px) {
     .theme-btn {
@@ -489,7 +504,7 @@ img {
     }
 }
 
-.theme-btn-s2 {
+/* .theme-btn-s2 {
     margin-right: 15px;
     background-color: #3e7884;
     color: #fff;
@@ -505,10 +520,17 @@ img {
     -ms-transition: all 0.3s;
     transition: all 0.3s;
     text-transform: uppercase;
-}
+} */
 
-.theme-btn-s2:hover {
+/* .theme-btn-s2:hover {
     background-color: #2f626b;
+} */
+
+/* Hover: xanh đậm hơn */
+.theme-btn:hover,
+.theme-btn-s2:hover {
+    background-color: #004D40;
+    color: #FFFFFF;
 }
 
 @media (max-width: 767px) {
@@ -4995,7 +5017,7 @@ display: flex;
 	justify-content: center;
 }
 
-.website_info_container .theme-btn {
+/* .website_info_container .theme-btn {
     width: 30%;
     min-width: 250px;
     margin: 10px;
@@ -5022,7 +5044,34 @@ display: flex;
 	.website_info {
 	padding: 40px 0;
 }
+} */
+
+/* Hover viền */
+.website_info_container .theme-btn:hover {
+    border: 1px solid #004D40;
 }
+
+/* Nội dung bên trong nút */
+.website_info_container .theme-btn .content-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Icon SVG */
+.website_info_container .theme-btn .content-button svg {
+    margin-right: 5px;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .theme-btn,
+    .theme-btn-s2 {
+        font-size: 14px;
+    }
+}
+
 .donate-modal-content {
     position: relative;
     background-color: #fefefe;
