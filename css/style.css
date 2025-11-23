@@ -6034,17 +6034,18 @@ z-index: 99999 !important;
 } */
 
 .submit-btn {
-  width: 100%;
-  margin-top: 20px;
-  padding: 12px;
-  background: #00796B; /* xanh ngọc đậm */
+  padding: 8px 20px;             /* giảm kích thước nút */
+  font-size: 14px;               /* giảm cỡ chữ */
+  background-color: #00796B;     /* xanh ngọc đậm */
   color: white;
   border: none;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 16px;
+  border-radius: 30px;           /* bo tròn mềm mại */
+  font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  display: inline-block;
+  min-width: 150px;
 }
 
 .submit-btn:hover {
